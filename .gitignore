@@ -1,5 +1,5 @@
 
-xcuserdata
+*.swp
 
-DerivedData
-*.xcuserstate
+Muse.xcodeproj/
+
