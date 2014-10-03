@@ -1,3 +1,5 @@
 
+xcuserdata
 
-**/xcuserdata/
+DerivedData
+*.xcuserstate
