@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="More" id="Y8v-iU-xaL"/>
+                    <tabBarItem key="tabBarItem" title="More" image="more32px.png" id="Y8v-iU-xaL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="knA-bR-cGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -36,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Albums" id="JqM-tH-OJn"/>
+                    <tabBarItem key="tabBarItem" title="Albums" image="album32px.png" id="JqM-tH-OJn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYt-jI-UAA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -55,7 +55,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Playlists" id="Z6P-En-UPM"/>
+                    <tabBarItem key="tabBarItem" title="Playlists" image="playlist32px.png" id="Z6P-En-UPM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,7 +74,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Songs" id="6IL-Ja-vZK"/>
+                    <tabBarItem key="tabBarItem" title="Songs" image="song32px.png" id="6IL-Ja-vZK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KrO-FF-U27" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,7 +93,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Artists" id="k2j-s9-pti"/>
+                    <tabBarItem key="tabBarItem" title="Artists" image="artist32px.png" id="k2j-s9-pti"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Z9-tk-tC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -122,4 +122,11 @@
             <point key="canvasLocation" x="517" y="467"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="album32px.png" width="32" height="32"/>
+        <image name="artist32px.png" width="32" height="32"/>
+        <image name="more32px.png" width="32" height="32"/>
+        <image name="playlist32px.png" width="32" height="32"/>
+        <image name="song32px.png" width="32" height="32"/>
+    </resources>
 </document>
