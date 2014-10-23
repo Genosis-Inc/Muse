@@ -82,11 +82,11 @@
                             <outlet property="delegate" destination="wMo-UX-cYE" id="sEK-ou-iv4"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Songs" image="song32px.png" id="gDk-GU-ShD"/>
+                    <navigationItem key="navigationItem" title="Songs" id="MZo-WP-hpG"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HJA-Lc-aZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1268" y="1206"/>
+            <point key="canvasLocation" x="2080" y="1206"/>
         </scene>
         <!--Artists-->
         <scene sceneID="Efy-Zs-nz5">
@@ -119,7 +119,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="18w-gA-dVA"/>
-                        <segue destination="wMo-UX-cYE" kind="relationship" relationship="viewControllers" id="4TT-Wd-hYo"/>
+                        <segue destination="tPP-Rj-S6k" kind="relationship" relationship="viewControllers" id="4TT-Wd-hYo"/>
                         <segue destination="Icr-VU-yOA" kind="relationship" relationship="viewControllers" id="fnU-YN-1D6"/>
                         <segue destination="Pe7-Wf-Ske" kind="relationship" relationship="viewControllers" id="xMh-vI-RST"/>
                         <segue destination="pbm-ia-EvE" kind="relationship" relationship="viewControllers" id="zzd-bH-tYg"/>
@@ -128,6 +128,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5y-74-YTN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="431" y="467"/>
+        </scene>
+        <!--Songs-->
+        <scene sceneID="20a-7U-kJG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tPP-Rj-S6k" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Songs" image="song32px.png" id="gDk-GU-ShD"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Eu-f5-esi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wMo-UX-cYE" kind="relationship" relationship="rootViewController" id="vD8-dN-YGj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aRX-Ei-UrS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1268" y="1206"/>
         </scene>
     </scenes>
     <resources>
