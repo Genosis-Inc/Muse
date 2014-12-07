@@ -17,6 +17,7 @@
 		C39BD12B19DE9E99009A35F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C39BD12A19DE9E99009A35F2 /* Images.xcassets */; };
 		C39BD12E19DE9E99009A35F2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C39BD12C19DE9E99009A35F2 /* LaunchScreen.xib */; };
 		C39BD13A19DE9E99009A35F2 /* MuseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39BD13919DE9E99009A35F2 /* MuseTests.swift */; };
+		C3D86F901A3432760005FE2D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D86F8F1A3432760005FE2D /* MainTabBarController.swift */; };
 		C3E541A019E63E4600C1A30E /* more32px.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E5419F19E63E4600C1A30E /* more32px.png */; };
 		C3E541A219E646E700C1A30E /* song32px.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E541A119E646E700C1A30E /* song32px.png */; };
 		C3E541A419E6475E00C1A30E /* playlist32px.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E541A319E6475E00C1A30E /* playlist32px.png */; };
@@ -49,6 +50,7 @@
 		C39BD13319DE9E99009A35F2 /* MuseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C39BD13819DE9E99009A35F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C39BD13919DE9E99009A35F2 /* MuseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseTests.swift; sourceTree = "<group>"; };
+		C3D86F8F1A3432760005FE2D /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		C3E5419F19E63E4600C1A30E /* more32px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more32px.png; sourceTree = "<group>"; };
 		C3E541A119E646E700C1A30E /* song32px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = song32px.png; sourceTree = "<group>"; };
 		C3E541A319E6475E00C1A30E /* playlist32px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playlist32px.png; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				C39BD12319DE9E99009A35F2 /* AppDelegate.swift */,
+				C3D86F8F1A3432760005FE2D /* MainTabBarController.swift */,
 				C39BD12519DE9E99009A35F2 /* PlaylistViewController.swift */,
 				C36FAC9419DFDFB500ECFAA4 /* ArtistViewController.swift */,
 				C36FAC9619DFDFDA00ECFAA4 /* AlbumViewController.swift */,
@@ -247,6 +250,7 @@
 				C33D12A819F9C5A5005767C9 /* SongTableViewController.swift in Sources */,
 				C36FAC9719DFDFDA00ECFAA4 /* AlbumViewController.swift in Sources */,
 				C39BD12619DE9E99009A35F2 /* PlaylistViewController.swift in Sources */,
+				C3D86F901A3432760005FE2D /* MainTabBarController.swift in Sources */,
 				C39B504519E56E5600496F86 /* MoreViewController.swift in Sources */,
 				C39BD12419DE9E99009A35F2 /* AppDelegate.swift in Sources */,
 				C36FAC9519DFDFB500ECFAA4 /* ArtistViewController.swift in Sources */,
