@@ -9,7 +9,8 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
-
+    
+    // Instance Override Method
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,4 +33,11 @@ class MainTabBarController: UITabBarController {
     }
     */
 
+    // Instance Method
+    
+    func ReadiPotLibrary() -> ()
+    {
+        
+        
+    }
 }
