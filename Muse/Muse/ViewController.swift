@@ -2,13 +2,13 @@
 //  ViewController.swift
 //  Muse
 //
-//  Created by Yuk Youngho on 2014. 10. 3..
-//  Copyright (c) 2014년 Genosis. All rights reserved.
+//  Created by Dongkyu Shin on 2015. 9. 3..
+//  Copyright (c) 2015년 Genosis. All rights reserved.
 //
 
 import UIKit
 
-class PlaylistViewController: UIViewController {
+class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
