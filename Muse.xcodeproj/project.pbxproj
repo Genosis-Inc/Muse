@@ -411,6 +411,7 @@
 				60AADA221B981AD200A5DCC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		60AADA231B981AD200A5DCC7 /* Build configuration list for PBXNativeTarget "MuseTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +420,7 @@
 				60AADA251B981AD200A5DCC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import MediaPlayer
 
 class ViewController: UIViewController {
+    @IBAction func play(sender: UIButton) {
+        let player = MPMusicPlayerController.systemMusicPlayer()
+        player.setQueueWithItemCollection(MPMediaItemCollection(items: MPMediaQuery.songsQuery().items))
+        
+        player.play()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +26,5 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
