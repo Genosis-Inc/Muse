@@ -13,6 +13,7 @@
 		60AADA0E1B981AD200A5DCC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60AADA0D1B981AD200A5DCC7 /* Images.xcassets */; };
 		60AADA111B981AD200A5DCC7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60AADA0F1B981AD200A5DCC7 /* LaunchScreen.xib */; };
 		60AADA1D1B981AD200A5DCC7 /* MuseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AADA1C1B981AD200A5DCC7 /* MuseTests.swift */; };
+		C381D4AA1BA5424100A7B57D /* MUSAudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C381D4A91BA5424100A7B57D /* MUSAudioManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		60AADA161B981AD200A5DCC7 /* MuseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60AADA1B1B981AD200A5DCC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60AADA1C1B981AD200A5DCC7 /* MuseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseTests.swift; sourceTree = "<group>"; };
+		C381D4A91BA5424100A7B57D /* MUSAudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSAudioManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				60AADA061B981AD200A5DCC7 /* AppDelegate.swift */,
 				60AADA081B981AD200A5DCC7 /* ViewController.swift */,
+				C381D4A91BA5424100A7B57D /* MUSAudioManager.swift */,
 				60AADA0A1B981AD200A5DCC7 /* Main.storyboard */,
 				60AADA0D1B981AD200A5DCC7 /* Images.xcassets */,
 				60AADA0F1B981AD200A5DCC7 /* LaunchScreen.xib */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C381D4AA1BA5424100A7B57D /* MUSAudioManager.swift in Sources */,
 				60AADA091B981AD200A5DCC7 /* ViewController.swift in Sources */,
 				60AADA071B981AD200A5DCC7 /* AppDelegate.swift in Sources */,
 			);
