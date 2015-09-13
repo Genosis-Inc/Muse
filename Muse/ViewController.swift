@@ -9,14 +9,27 @@
 import UIKit
 import MediaPlayer
 
+
 class ViewController: UIViewController {
-    @IBAction func play(sender: UIButton) {
-        let player = MPMusicPlayerController.systemMusicPlayer()
-        player.setQueueWithItemCollection(MPMediaItemCollection(items: MPMediaQuery.songsQuery().items))
-        
-        player.play()
+    
+    let MUSAudioMgr : MUSAudioManager = MUSAudioManager()   // 음악 관리자
+    
+    
+    @IBAction func play(sender: UIButton)
+    {
+        MUSAudioMgr.play()
     }
 
+    @IBAction func PlayPrev(sender: AnyObject)
+    {
+        MUSAudioMgr.playPrev()
+    }
+    
+    @IBAction func PlayNext(sender: AnyObject)
+    {
+        MUSAudioMgr.playNext()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
