@@ -21,7 +21,7 @@ class MUSAudioManager
         
         if (nil != sysMusicPlayer)
         {
-            sysMusicPlayer.setQueueWithItemCollection(MPMediaItemCollection(items: MPMediaQuery.songsQuery().items))
+            sysMusicPlayer.setQueueWithItemCollection(MPMediaItemCollection(items: MPMediaQuery.songsQuery().items!))
             sysMediaQuery = MPMediaQuery.songsQuery()
         }
     }
