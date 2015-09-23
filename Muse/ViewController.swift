@@ -13,7 +13,7 @@ import MediaPlayer
 class ViewController: UIViewController {
     
     let MUSAudioMgr : MUSAudioManager = MUSAudioManager()   // 음악 관리자
-    
+    @IBOutlet weak var artWorkView: UIImageView!
     
     @IBAction func play(sender: UIButton)
     {
@@ -30,9 +30,19 @@ class ViewController: UIViewController {
         MUSAudioMgr.playNext()
     }
     
+    func NowPlayingItemDidChanged(notification: NSNotification)
+    {
+        artWorkView.image = MUSAudioMgr.sysMusicPlayer.nowPlayingItem!.artwork!.imageWithSize(artWorkView.intrinsicContentSize())
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "NowPlayingItemDidChanged:",
+            name: MPMusicPlayerControllerNowPlayingItemDidChangeNotification,
+            object: nil)
     }
 
     override func didReceiveMemoryWarning() {

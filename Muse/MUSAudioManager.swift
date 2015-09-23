@@ -11,18 +11,15 @@ import MediaPlayer
 
 class MUSAudioManager
 {
-    var sysMusicPlayer : MPMusicPlayerController! = nil
-    var sysMediaQuery : MPMediaQuery! = nil
-    
+    var sysMusicPlayer: MPMusicPlayerController! = nil
     
     init()
     {
         sysMusicPlayer = MPMusicPlayerController.systemMusicPlayer()
-        
         if (nil != sysMusicPlayer)
         {
+            sysMusicPlayer.beginGeneratingPlaybackNotifications()
             sysMusicPlayer.setQueueWithItemCollection(MPMediaItemCollection(items: MPMediaQuery.songsQuery().items!))
-            sysMediaQuery = MPMediaQuery.songsQuery()
         }
     }
     
