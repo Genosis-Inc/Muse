@@ -51,6 +51,7 @@
                     </view>
                     <connections>
                         <outlet property="artWorkView" destination="46Q-PL-mog" id="Dab-CB-JOK"/>
+                        <outlet property="btnPlayStop" destination="ZcO-MY-EEO" id="OA5-xf-jq0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
