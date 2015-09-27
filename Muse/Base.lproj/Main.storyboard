@@ -46,12 +46,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="46Q-PL-mog">
                                 <rect key="frame" x="178" y="7" width="230" height="230"/>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwY-jL-HZv">
+                                <rect key="frame" x="178" y="368" width="230" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="artWorkView" destination="46Q-PL-mog" id="Dab-CB-JOK"/>
                         <outlet property="btnPlayStop" destination="ZcO-MY-EEO" id="OA5-xf-jq0"/>
+                        <outlet property="volumeControlView" destination="cwY-jL-HZv" id="RDL-gm-qCF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

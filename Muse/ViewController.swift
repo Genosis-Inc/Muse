@@ -15,7 +15,10 @@ class ViewController: UIViewController {
     let MUSAudioMgr : MUSAudioManager = MUSAudioManager()
     
     @IBOutlet weak var artWorkView: UIImageView!
+    @IBOutlet var volumeControlView: UIView!
+    
     @IBOutlet var btnPlayStop: UIButton!
+    
     
     /// Playback 현재 음악 재생
     @IBAction func play(sender: UIButton)
@@ -84,10 +87,19 @@ class ViewController: UIViewController {
         
     }
     
+    /// 볼륨 컨트롤 뷰를 생성한다.
+    func createVolumnControl()
+    {
+        let volumeView = MPVolumeView(frame:volumeControlView.bounds)
+        volumeControlView.addSubview(volumeView)
+    }
+    
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        createVolumnControl()
         
         NSNotificationCenter.defaultCenter().addObserver(self,
                                                          selector: "NowPlayingItemDidChanged:",
