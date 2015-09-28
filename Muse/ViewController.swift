@@ -29,13 +29,10 @@ class ViewController: UIViewController {
         {
         case MPMusicPlaybackState.Paused:
             audioPlayer.player.play()
-            break
         case MPMusicPlaybackState.Playing:
             audioPlayer.player.pause()
-            break
         case MPMusicPlaybackState.Stopped:
             audioPlayer.player.play()
-            break
         default:
             break
         }
@@ -74,15 +71,12 @@ class ViewController: UIViewController {
         {
         case MPMusicPlaybackState.Paused:
             btnPlayStop.setTitle("Play", forState: .Normal)
-            break
         case MPMusicPlaybackState.Playing:
             btnPlayStop.setTitle("Pause", forState: .Normal)
-            break
         case MPMusicPlaybackState.Stopped:
             btnPlayStop.setTitle("Play", forState: .Normal)
-            break
         default:
-            break
+             break
         }
         
     }
