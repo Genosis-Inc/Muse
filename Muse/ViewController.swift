@@ -23,18 +23,18 @@ class ViewController: UIViewController {
     /// Playback 현재 음악 재생
     @IBAction func play(sender: UIButton)
     {
-        let playbackState: MPMusicPlaybackState = audioPlayer.getPlaybackState()
+        let playbackState: MPMusicPlaybackState = audioPlayer.player.playbackState
         
         switch (playbackState)
         {
         case MPMusicPlaybackState.Paused:
-            audioPlayer.play()
+            audioPlayer.player.play()
             break
         case MPMusicPlaybackState.Playing:
-            audioPlayer.pause()
+            audioPlayer.player.pause()
             break
         case MPMusicPlaybackState.Stopped:
-            audioPlayer.play()
+            audioPlayer.player.play()
             break
         default:
             break
@@ -44,13 +44,13 @@ class ViewController: UIViewController {
     /// Playback 이전 음악 재생
     @IBAction func PlayPrev(sender: AnyObject)
     {
-        audioPlayer.playPrev()
+        audioPlayer.player.skipToPreviousItem()
     }
     
     /// Playback 다음 음악 재생
     @IBAction func PlayNext(sender: AnyObject)
     {
-        audioPlayer.playNext()
+        audioPlayer.player.skipToNextItem()
     }
     
     
@@ -68,7 +68,7 @@ class ViewController: UIViewController {
     /// MPMusicPlayerControllerPlaybackStateDidChangeNotification 이벤트 핸들러
     func PlaybakStateChanged(notification: NSNotification)
     {
-        let playbackState: MPMusicPlaybackState = audioPlayer.getPlaybackState()
+        let playbackState: MPMusicPlaybackState = audioPlayer.player.playbackState
         
         switch (playbackState)
         {
