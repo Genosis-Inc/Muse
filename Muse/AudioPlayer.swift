@@ -55,14 +55,12 @@ class AudioPlayer
     func playNext()
     {
         player.skipToNextItem()
-        player.play()
     }
     
     /// 현재 재생중인 음악의 이전 음악을 재생합니다.
     func playPrev()
     {
         player.skipToPreviousItem()
-        player.play()
     }
     
     /// 현재 Playback state 리턴한다.
