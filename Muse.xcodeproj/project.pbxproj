@@ -13,7 +13,7 @@
 		60AADA0E1B981AD200A5DCC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60AADA0D1B981AD200A5DCC7 /* Images.xcassets */; };
 		60AADA111B981AD200A5DCC7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60AADA0F1B981AD200A5DCC7 /* LaunchScreen.xib */; };
 		60AADA1D1B981AD200A5DCC7 /* MuseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AADA1C1B981AD200A5DCC7 /* MuseTests.swift */; };
-		C381D4AA1BA5424100A7B57D /* MUSAudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C381D4A91BA5424100A7B57D /* MUSAudioManager.swift */; };
+		C33104891BB989AF0069DC86 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33104881BB989AF0069DC86 /* AudioPlayer.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 		60AADA161B981AD200A5DCC7 /* MuseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60AADA1B1B981AD200A5DCC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60AADA1C1B981AD200A5DCC7 /* MuseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseTests.swift; sourceTree = "<group>"; };
-		C381D4A91BA5424100A7B57D /* MUSAudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSAudioManager.swift; sourceTree = "<group>"; };
+		C33104881BB989AF0069DC86 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 			children = (
 				60AADA061B981AD200A5DCC7 /* AppDelegate.swift */,
 				60AADA081B981AD200A5DCC7 /* ViewController.swift */,
-				C381D4A91BA5424100A7B57D /* MUSAudioManager.swift */,
+				C33104881BB989AF0069DC86 /* AudioPlayer.swift */,
 				60AADA0A1B981AD200A5DCC7 /* Main.storyboard */,
 				60AADA0D1B981AD200A5DCC7 /* Images.xcassets */,
 				60AADA0F1B981AD200A5DCC7 /* LaunchScreen.xib */,
@@ -160,7 +160,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Genosis;
 				TargetAttributes = {
 					60AADA001B981AD200A5DCC7 = {
@@ -216,9 +216,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C381D4AA1BA5424100A7B57D /* MUSAudioManager.swift in Sources */,
 				60AADA091B981AD200A5DCC7 /* ViewController.swift in Sources */,
 				60AADA071B981AD200A5DCC7 /* AppDelegate.swift in Sources */,
+				C33104891BB989AF0069DC86 /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +281,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -349,6 +350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Muse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.genosis.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -359,6 +361,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Muse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.genosis.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -377,6 +380,7 @@
 				);
 				INFOPLIST_FILE = MuseTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.genosis.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Muse.app/Muse";
 			};
@@ -392,6 +396,7 @@
 				);
 				INFOPLIST_FILE = MuseTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.genosis.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Muse.app/Muse";
 			};
