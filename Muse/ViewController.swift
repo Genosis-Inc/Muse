@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var artWorkView: UIImageView!
     @IBOutlet var volumeControlView: UIView!
+    @IBOutlet var lblTitle: UILabel!
+    @IBOutlet var lblArtistAlbum: UILabel!
     
     @IBOutlet var btnPlayStop: UIButton!
     
@@ -53,11 +55,14 @@ class ViewController: UIViewController {
     
     /// 재생중인 음악이 변경되었을 경우 처리
     ///
-    /// MPMusicPlayerControllerNowPlayingItemDidChangeNotification
-    /// 재생 변경된 음악의 앨범을 출력한다.
+    /// - 재생할 음악의 앨범 이미지
+    /// - 재생할 음악의 타이틀
+    /// - 재생할 음악의 아티스트 및 앨범 이름
     func NowPlayingItemDidChanged(notification: NSNotification)
     {
         artWorkView.image = audioPlayer.player.nowPlayingItem!.artwork!.imageWithSize(artWorkView.intrinsicContentSize())
+        lblTitle.text = audioPlayer.player.nowPlayingItem!.title
+        lblArtistAlbum.text = String(format: "%@ - %@", audioPlayer.player.nowPlayingItem!.albumArtist!, audioPlayer.player.nowPlayingItem!.albumTitle!)
     }
     
     /// 재생 상태가 변경되었을 경우 처리
