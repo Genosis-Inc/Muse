@@ -12,7 +12,7 @@ import MediaPlayer
 
 class ViewController: UIViewController {
     
-    let MUSAudioMgr : MUSAudioManager = MUSAudioManager()
+    let audioPlayer : AudioPlayer = AudioPlayer()
     
     @IBOutlet weak var artWorkView: UIImageView!
     @IBOutlet var volumeControlView: UIView!
@@ -23,19 +23,16 @@ class ViewController: UIViewController {
     /// Playback 현재 음악 재생
     @IBAction func play(sender: UIButton)
     {
-        let playbackState: MPMusicPlaybackState = MUSAudioMgr.getPlaybackState()
+        let playbackState: MPMusicPlaybackState = audioPlayer.player.playbackState
         
         switch (playbackState)
         {
         case MPMusicPlaybackState.Paused:
-            MUSAudioMgr.play()
-            break
+            audioPlayer.player.play()
         case MPMusicPlaybackState.Playing:
-            MUSAudioMgr.pause()
-            break
+            audioPlayer.player.pause()
         case MPMusicPlaybackState.Stopped:
-            MUSAudioMgr.play()
-            break
+            audioPlayer.player.play()
         default:
             break
         }
@@ -44,13 +41,13 @@ class ViewController: UIViewController {
     /// Playback 이전 음악 재생
     @IBAction func PlayPrev(sender: AnyObject)
     {
-        MUSAudioMgr.playPrev()
+        audioPlayer.player.skipToPreviousItem()
     }
     
     /// Playback 다음 음악 재생
     @IBAction func PlayNext(sender: AnyObject)
     {
-        MUSAudioMgr.playNext()
+        audioPlayer.player.skipToNextItem()
     }
     
     
@@ -60,7 +57,7 @@ class ViewController: UIViewController {
     /// 재생 변경된 음악의 앨범을 출력한다.
     func NowPlayingItemDidChanged(notification: NSNotification)
     {
-        artWorkView.image = MUSAudioMgr.sysMusicPlayer.nowPlayingItem!.artwork!.imageWithSize(artWorkView.intrinsicContentSize())
+        artWorkView.image = audioPlayer.player.nowPlayingItem!.artwork!.imageWithSize(artWorkView.intrinsicContentSize())
     }
     
     /// 재생 상태가 변경되었을 경우 처리
@@ -68,21 +65,18 @@ class ViewController: UIViewController {
     /// MPMusicPlayerControllerPlaybackStateDidChangeNotification 이벤트 핸들러
     func PlaybakStateChanged(notification: NSNotification)
     {
-        let playbackState: MPMusicPlaybackState = MUSAudioMgr.getPlaybackState()
+        let playbackState: MPMusicPlaybackState = audioPlayer.player.playbackState
         
         switch (playbackState)
         {
         case MPMusicPlaybackState.Paused:
             btnPlayStop.setTitle("Play", forState: .Normal)
-            break
         case MPMusicPlaybackState.Playing:
             btnPlayStop.setTitle("Pause", forState: .Normal)
-            break
         case MPMusicPlaybackState.Stopped:
             btnPlayStop.setTitle("Play", forState: .Normal)
-            break
         default:
-            break
+             break
         }
         
     }
