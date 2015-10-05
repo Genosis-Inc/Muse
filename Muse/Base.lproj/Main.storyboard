@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,8 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcO-MY-EEO">
-                                <rect key="frame" x="257" y="330" width="55" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcO-MY-EEO">
+                                <rect key="frame" x="275" y="162" width="50" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Play">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -25,8 +27,9 @@
                                     <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yuX-A4-2un"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TT7-pd-LPc">
-                                <rect key="frame" x="190" y="330" width="31" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TT7-pd-LPc">
+                                <rect key="frame" x="200" y="162" width="50" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Prev">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -34,8 +37,9 @@
                                     <action selector="PlayPrev:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ix9-yh-GvO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozg-RR-sHl">
-                                <rect key="frame" x="347" y="330" width="32" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozg-RR-sHl">
+                                <rect key="frame" x="350" y="162" width="50" height="30"/>
+                                <animations/>
                                 <state key="normal" title="Next">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -43,27 +47,52 @@
                                     <action selector="PlayNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cqr-0b-e1t"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="46Q-PL-mog">
-                                <rect key="frame" x="178" y="7" width="230" height="230"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="46Q-PL-mog">
+                                <rect key="frame" x="0.0" y="20" width="600" height="73"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="46Q-PL-mog" secondAttribute="height" multiplier="1:1" id="yGA-PX-BeN"/>
+                                </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwY-jL-HZv" customClass="MPVolumeView">
-                                <rect key="frame" x="178" y="368" width="230" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkI-ny-Nz5">
+                                <rect key="frame" x="200" y="106" width="200" height="20"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Artist - Album" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQB-JP-6Rq">
+                                <rect key="frame" x="200" y="134" width="200" height="20"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwY-jL-HZv" customClass="MPVolumeView">
+                                <rect key="frame" x="200" y="200" width="200" height="20"/>
+                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkI-ny-Nz5">
-                                <rect key="frame" x="197" y="260" width="192" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist - Album" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQB-JP-6Rq">
-                                <rect key="frame" x="197" y="289" width="197" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hQB-JP-6Rq" firstAttribute="top" secondItem="DkI-ny-Nz5" secondAttribute="bottom" constant="8" symbolic="YES" id="1ws-bU-x0a"/>
+                            <constraint firstItem="TT7-pd-LPc" firstAttribute="baseline" secondItem="ZcO-MY-EEO" secondAttribute="baseline" id="Asm-8z-3Wh"/>
+                            <constraint firstItem="Ozg-RR-sHl" firstAttribute="leading" secondItem="ZcO-MY-EEO" secondAttribute="trailing" constant="8" symbolic="YES" id="CYg-5x-y2J"/>
+                            <constraint firstItem="cwY-jL-HZv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F4O-V8-4ri"/>
+                            <constraint firstItem="ZcO-MY-EEO" firstAttribute="top" secondItem="hQB-JP-6Rq" secondAttribute="bottom" id="HUh-Sz-uwX"/>
+                            <constraint firstItem="ZcO-MY-EEO" firstAttribute="leading" secondItem="TT7-pd-LPc" secondAttribute="trailing" constant="8" symbolic="YES" id="L1g-P1-E6j"/>
+                            <constraint firstItem="Ozg-RR-sHl" firstAttribute="baseline" secondItem="ZcO-MY-EEO" secondAttribute="baseline" id="Sb5-Qg-dJb"/>
+                            <constraint firstItem="DkI-ny-Nz5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YmT-Sv-GaC"/>
+                            <constraint firstItem="46Q-PL-mog" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dDL-Px-9D7"/>
+                            <constraint firstItem="46Q-PL-mog" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dSO-WH-5V3"/>
+                            <constraint firstItem="hQB-JP-6Rq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gzw-YI-DxF"/>
+                            <constraint firstItem="46Q-PL-mog" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hTQ-Yu-EPD"/>
+                            <constraint firstItem="DkI-ny-Nz5" firstAttribute="top" secondItem="46Q-PL-mog" secondAttribute="bottom" constant="8" symbolic="YES" id="lOp-20-z4n"/>
+                            <constraint firstItem="cwY-jL-HZv" firstAttribute="top" secondItem="ZcO-MY-EEO" secondAttribute="bottom" constant="8" symbolic="YES" id="oTO-zA-cXJ"/>
+                            <constraint firstItem="ZcO-MY-EEO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tca-hr-egb"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="artWorkView" destination="46Q-PL-mog" id="Dab-CB-JOK"/>
