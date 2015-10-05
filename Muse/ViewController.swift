@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     let audioPlayer : AudioPlayer = AudioPlayer()
     
     @IBOutlet weak var artWorkView: UIImageView!
-    @IBOutlet var volumeControlView: UIView!
     @IBOutlet var lblTitle: UILabel!
     @IBOutlet var lblArtistAlbum: UILabel!
     
@@ -86,19 +85,9 @@ class ViewController: UIViewController {
         
     }
     
-    /// 볼륨 컨트롤 뷰를 생성한다.
-    func createVolumnControl()
-    {
-        let volumeView = MPVolumeView(frame:volumeControlView.bounds)
-        volumeControlView.addSubview(volumeView)
-    }
-    
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        createVolumnControl()
         
         NSNotificationCenter.defaultCenter().addObserver(self,
                                                          selector: "NowPlayingItemDidChanged:",

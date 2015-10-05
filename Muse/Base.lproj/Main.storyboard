@@ -46,7 +46,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="46Q-PL-mog">
                                 <rect key="frame" x="178" y="7" width="230" height="230"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwY-jL-HZv">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwY-jL-HZv" customClass="MPVolumeView">
                                 <rect key="frame" x="178" y="368" width="230" height="20"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -70,7 +70,6 @@
                         <outlet property="btnPlayStop" destination="ZcO-MY-EEO" id="OA5-xf-jq0"/>
                         <outlet property="lblArtistAlbum" destination="hQB-JP-6Rq" id="WJP-GG-TC9"/>
                         <outlet property="lblTitle" destination="DkI-ny-Nz5" id="zJx-kq-QMJ"/>
-                        <outlet property="volumeControlView" destination="cwY-jL-HZv" id="RDL-gm-qCF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
