@@ -9,7 +9,6 @@
 import UIKit
 import MediaPlayer
 
-
 class ViewController: UIViewController {
     
     @IBOutlet weak var artWorkView: UIImageView!
@@ -17,103 +16,111 @@ class ViewController: UIViewController {
     @IBOutlet var lblArtistAlbum: UILabel!
     @IBOutlet var btnPlayStop: UIButton!
     
-    let audioPlayer : AudioPlayer = AudioPlayer()
+    let player = MPMusicPlayerController.applicationMusicPlayer()
     
+    // TODO: Artwork의 기본 이미지를 정해야 합니다.
     let defaultAlbumArtwork: MPMediaItemArtwork! = nil
     let defaultAlbumArtist: String = "Unknown Aritst"
     let defaultAlbumTitle: String = "Unknown Album"
     let defaultSongTitle: String = "Unknown Song"
     
-    /// Playback 현재 음악 재생
-    @IBAction func play(sender: UIButton)
-    {
-        let playbackState: MPMusicPlaybackState = audioPlayer.player.playbackState
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
         
-        switch (playbackState)
-        {
-        case MPMusicPlaybackState.Paused:
-            audioPlayer.player.play()
+        // Device의 모든 곡을 조회하여 Player의 Queue에 담습니다.
+        let mediaItems = MPMediaQuery.songsQuery().items!
+        player.setQueueWithItemCollection(MPMediaItemCollection(items: mediaItems))
+        
+        // 현재 곡을 첫번째 곡으로 설정합니다.
+        player.nowPlayingItem = mediaItems.first as MPMediaItem?
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "NowPlayingItemDidChanged:",
+            name: MPMusicPlayerControllerNowPlayingItemDidChangeNotification,
+            object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "PlaybakStateChanged:",
+            name: MPMusicPlayerControllerPlaybackStateDidChangeNotification,
+            object: nil)
+        
+        player.beginGeneratingPlaybackNotifications()
+    }
+    
+    deinit {
+        player.endGeneratingPlaybackNotifications()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    /// Playback 현재 음악 재생
+    @IBAction func play(sender: UIButton) {
+        let playbackState: MPMusicPlaybackState = player.playbackState
+        
+        switch (playbackState) {
         case MPMusicPlaybackState.Playing:
-            audioPlayer.player.pause()
-        case MPMusicPlaybackState.Stopped:
-            audioPlayer.player.play()
+            player.pause()
+        case MPMusicPlaybackState.Stopped,
+        MPMusicPlaybackState.Paused:
+            player.play()
         default:
             break
         }
     }
 
     /// Playback 이전 음악 재생
-    @IBAction func PlayPrev(sender: AnyObject)
-    {
-        audioPlayer.player.skipToPreviousItem()
+    @IBAction func PlayPrev(sender: AnyObject) {
+        player.skipToPreviousItem()
     }
     
     /// Playback 다음 음악 재생
-    @IBAction func PlayNext(sender: AnyObject)
-    {
-        audioPlayer.player.skipToNextItem()
+    @IBAction func PlayNext(sender: AnyObject) {
+        player.skipToNextItem()
     }
     
-    
-    /// 재생중인 음악이 변경되었을 경우 처리
-    ///
-    /// - 재생할 음악의 앨범 이미지
-    /// - 재생할 음악의 타이틀
-    /// - 재생할 음악의 아티스트 및 앨범 이름
-    func NowPlayingItemDidChanged(notification: NSNotification)
-    {
-        guard let item = audioPlayer.player.nowPlayingItem else { return }
-        
-        let albumArtWork = item.artwork ?? defaultAlbumArtwork
-        let albumArtist = item.albumArtist ?? defaultAlbumArtist
-        let albumTitle = item.albumTitle ?? defaultAlbumTitle
-        let songTitle = item.title ?? defaultSongTitle
-        
-        artWorkView.image = albumArtWork == nil ? nil :albumArtWork!.imageWithSize(artWorkView.intrinsicContentSize())
-        lblTitle.text = songTitle
-        lblArtistAlbum.text = String("\(albumArtist) - \(albumTitle)")
+    /// MPMediaItem의 정보를 반환합니다.
+    /// - parameter item: `MPMediaItem`
+    /// - returns: artWork: 앨범의 이미지
+    ///            artist: 아티스트 명
+    ///            album: 앨범 명
+    ///            title: 노래 명
+    func getItem(item: MPMediaItem) -> (artWork: MPMediaItemArtwork!, artist: String, album: String, title: String) {
+        return (item.artwork ?? defaultAlbumArtwork,
+            item.albumArtist ?? defaultAlbumArtist,
+            item.albumTitle ?? defaultAlbumTitle,
+            item.title ?? defaultSongTitle)
     }
     
-    /// 재생 상태가 변경되었을 경우 처리
-    ///
-    /// MPMusicPlayerControllerPlaybackStateDidChangeNotification 이벤트 핸들러
-    func PlaybakStateChanged(notification: NSNotification)
-    {
-        let playbackState: MPMusicPlaybackState = audioPlayer.player.playbackState
+    /// `MPMusicPlayerControllerNowPlayingItemDidChangeNotification`의 이벤트 핸들러
+    func NowPlayingItemDidChanged(notification: NSNotification) {
+        guard let playingItem = player.nowPlayingItem else { return }
         
-        switch (playbackState)
-        {
-        case MPMusicPlaybackState.Paused:
-            btnPlayStop.setTitle("Play", forState: .Normal)
+        let item = getItem(playingItem)
+        
+        artWorkView.image = item.artWork == nil ? nil : item.artWork!.imageWithSize(artWorkView.intrinsicContentSize())
+        lblTitle.text = item.title
+        lblArtistAlbum.text = String("\(item.artist) - \(item.album)")
+    }
+    
+    /// `MPMusicPlayerControllerPlaybackStateDidChangeNotification`의 이벤트 핸들러
+    func PlaybakStateChanged(notification: NSNotification) {
+        let playbackState: MPMusicPlaybackState = player.playbackState
+        
+        switch (playbackState) {
         case MPMusicPlaybackState.Playing:
             btnPlayStop.setTitle("Pause", forState: .Normal)
-        case MPMusicPlaybackState.Stopped:
+        case MPMusicPlaybackState.Stopped,
+        MPMusicPlaybackState.Paused:
             btnPlayStop.setTitle("Play", forState: .Normal)
         default:
              break
         }
-        
-    }
-    
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: "NowPlayingItemDidChanged:",
-                                                         name: MPMusicPlayerControllerNowPlayingItemDidChangeNotification,
-                                                         object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self,
-                                                         selector: "PlaybakStateChanged:",
-                                                         name: MPMusicPlayerControllerPlaybackStateDidChangeNotification,
-                                                         object: nil)
-    }
-    
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
-
