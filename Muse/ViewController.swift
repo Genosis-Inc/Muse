@@ -12,14 +12,17 @@ import MediaPlayer
 
 class ViewController: UIViewController {
     
-    let audioPlayer : AudioPlayer = AudioPlayer()
-    
     @IBOutlet weak var artWorkView: UIImageView!
     @IBOutlet var lblTitle: UILabel!
     @IBOutlet var lblArtistAlbum: UILabel!
-    
     @IBOutlet var btnPlayStop: UIButton!
     
+    let audioPlayer : AudioPlayer = AudioPlayer()
+    
+    let defaultAlbumArtwork: MPMediaItemArtwork! = nil
+    let defaultAlbumArtist: String = "Unknown Aritst"
+    let defaultAlbumTitle: String = "Unknown Album"
+    let defaultSongTitle: String = "Unknown Song"
     
     /// Playback 현재 음악 재생
     @IBAction func play(sender: UIButton)
@@ -59,9 +62,16 @@ class ViewController: UIViewController {
     /// - 재생할 음악의 아티스트 및 앨범 이름
     func NowPlayingItemDidChanged(notification: NSNotification)
     {
-        artWorkView.image = audioPlayer.player.nowPlayingItem!.artwork!.imageWithSize(artWorkView.intrinsicContentSize())
-        lblTitle.text = audioPlayer.player.nowPlayingItem!.title
-        lblArtistAlbum.text = String(format: "%@ - %@", audioPlayer.player.nowPlayingItem!.albumArtist!, audioPlayer.player.nowPlayingItem!.albumTitle!)
+        guard let item = audioPlayer.player.nowPlayingItem else { return }
+        
+        let albumArtWork = item.artwork ?? defaultAlbumArtwork
+        let albumArtist = item.albumArtist ?? defaultAlbumArtist
+        let albumTitle = item.albumTitle ?? defaultAlbumTitle
+        let songTitle = item.title ?? defaultSongTitle
+        
+        artWorkView.image = albumArtWork == nil ? nil :albumArtWork!.imageWithSize(artWorkView.intrinsicContentSize())
+        lblTitle.text = songTitle
+        lblArtistAlbum.text = String("\(albumArtist) - \(albumTitle)")
     }
     
     /// 재생 상태가 변경되었을 경우 처리

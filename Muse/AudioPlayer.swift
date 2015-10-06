@@ -14,18 +14,17 @@ import MediaPlayer
 /// 오디오 플레이어
 class AudioPlayer
 {
-    var player: MPMusicPlayerController! = nil
+    var player: MPMusicPlayerController = MPMusicPlayerController.applicationMusicPlayer()
     
     init()
     {
-        // SystemMusicPlayer 인스턴스 생성
-        player = MPMusicPlayerController.systemMusicPlayer()
+        // Playback 설정
+        let mediaItems = MPMediaQuery.songsQuery().items!
+        player.setQueueWithItemCollection(MPMediaItemCollection(items: mediaItems))
+        player.nowPlayingItem = mediaItems.first as MPMediaItem?
         
         // Notification 등록
         player.beginGeneratingPlaybackNotifications()
-        
-        // Playback 설정
-        player.setQueueWithItemCollection(MPMediaItemCollection(items: MPMediaQuery.songsQuery().items!))
     }
     
     deinit
