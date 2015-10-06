@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet var lblTitle: UILabel!
     @IBOutlet var lblArtistAlbum: UILabel!
     @IBOutlet var btnPlayStop: UIButton!
+    @IBOutlet var btnShuffleMode: UIButton!
     
     let player = MPMusicPlayerController.applicationMusicPlayer()
     
@@ -33,6 +34,9 @@ class ViewController: UIViewController {
         
         // 현재 곡을 첫번째 곡으로 설정합니다.
         player.nowPlayingItem = mediaItems.first as MPMediaItem?
+        
+        // Shuffle Mode 를 설정합니다.
+        player.shuffleMode = .Off
         
         NSNotificationCenter.defaultCenter().addObserver(self,
             selector: "NowPlayingItemDidChanged:",
@@ -59,16 +63,30 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /// Shuffle mode를 변경 합니다.
+    /// - parameter sender: shuffle mode button
+    @IBAction func setShuffleMode(sender: AnyObject) {
+        let shuffleMode = player.shuffleMode
+        
+        switch (shuffleMode) {
+        case .Songs, .Albums, .Default:
+            player.shuffleMode = .Off
+        case .Off:
+            player.shuffleMode = .Songs
+        }
+        
+        displayShuffleMode()
+    }
     
     /// Playback 현재 음악 재생
+    /// play 버튼은 play / pause 두 개의 동작을 toggle 합니다.
     @IBAction func play(sender: UIButton) {
         let playbackState: MPMusicPlaybackState = player.playbackState
         
         switch (playbackState) {
         case MPMusicPlaybackState.Playing:
             player.pause()
-        case MPMusicPlaybackState.Stopped,
-        MPMusicPlaybackState.Paused:
+        case MPMusicPlaybackState.Stopped, MPMusicPlaybackState.Paused:
             player.play()
         default:
             break
@@ -121,6 +139,23 @@ class ViewController: UIViewController {
             btnPlayStop.setTitle("Play", forState: .Normal)
         default:
              break
+        }
+    }
+    
+    /// Shuffle mode 설명을 화면에 출력 합니다.
+    func displayShuffleMode() {
+        // TODO: 어떤 shuffle mode인지 명시적으로 사용자에게 알려줬으면 합니다.
+        let shuffleMode = player.shuffleMode
+        
+        switch (shuffleMode) {
+        case .Off:
+            btnShuffleMode.setTitle("Off", forState: .Normal)
+        case .Default:
+            btnShuffleMode.setTitle("Default", forState: .Normal)
+        case .Albums:
+            btnShuffleMode.setTitle("Albums", forState: .Normal)
+        case .Songs:
+            btnShuffleMode.setTitle("Songs", forState: .Normal)
         }
     }
 }

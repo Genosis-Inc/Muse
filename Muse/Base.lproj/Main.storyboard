@@ -73,6 +73,14 @@
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PX4-C7-Xbt">
+                                <rect key="frame" x="202" y="236" width="58" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Shuffle"/>
+                                <connections>
+                                    <action selector="setShuffleMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0H9-2m-VH8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -90,13 +98,16 @@
                             <constraint firstItem="hQB-JP-6Rq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gzw-YI-DxF"/>
                             <constraint firstItem="46Q-PL-mog" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hTQ-Yu-EPD"/>
                             <constraint firstItem="DkI-ny-Nz5" firstAttribute="top" secondItem="46Q-PL-mog" secondAttribute="bottom" constant="8" symbolic="YES" id="lOp-20-z4n"/>
+                            <constraint firstItem="PX4-C7-Xbt" firstAttribute="top" secondItem="cwY-jL-HZv" secondAttribute="bottom" constant="16" id="mLL-RS-hfw"/>
                             <constraint firstItem="cwY-jL-HZv" firstAttribute="top" secondItem="ZcO-MY-EEO" secondAttribute="bottom" constant="8" symbolic="YES" id="oTO-zA-cXJ"/>
+                            <constraint firstItem="PX4-C7-Xbt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-70" id="olr-Lx-h2F"/>
                             <constraint firstItem="ZcO-MY-EEO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tca-hr-egb"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="artWorkView" destination="46Q-PL-mog" id="Dab-CB-JOK"/>
                         <outlet property="btnPlayStop" destination="ZcO-MY-EEO" id="OA5-xf-jq0"/>
+                        <outlet property="btnShuffleMode" destination="PX4-C7-Xbt" id="6i4-2X-hTw"/>
                         <outlet property="lblArtistAlbum" destination="hQB-JP-6Rq" id="WJP-GG-TC9"/>
                         <outlet property="lblTitle" destination="DkI-ny-Nz5" id="zJx-kq-QMJ"/>
                     </connections>
