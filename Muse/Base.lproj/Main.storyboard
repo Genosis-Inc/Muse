@@ -72,9 +72,10 @@
                                 <rect key="frame" x="200" y="200" width="200" height="20"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.94999999999999996" height="1"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PX4-C7-Xbt">
-                                <rect key="frame" x="202" y="236" width="58" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PX4-C7-Xbt">
+                                <rect key="frame" x="275" y="562" width="50" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Shuffle"/>
                                 <connections>
@@ -86,11 +87,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hQB-JP-6Rq" firstAttribute="top" secondItem="DkI-ny-Nz5" secondAttribute="bottom" constant="8" symbolic="YES" id="1ws-bU-x0a"/>
+                            <constraint firstItem="cwY-jL-HZv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8OT-jl-4fB"/>
                             <constraint firstItem="TT7-pd-LPc" firstAttribute="baseline" secondItem="ZcO-MY-EEO" secondAttribute="baseline" id="Asm-8z-3Wh"/>
                             <constraint firstItem="Ozg-RR-sHl" firstAttribute="leading" secondItem="ZcO-MY-EEO" secondAttribute="trailing" constant="8" symbolic="YES" id="CYg-5x-y2J"/>
-                            <constraint firstItem="cwY-jL-HZv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F4O-V8-4ri"/>
                             <constraint firstItem="ZcO-MY-EEO" firstAttribute="top" secondItem="hQB-JP-6Rq" secondAttribute="bottom" id="HUh-Sz-uwX"/>
                             <constraint firstItem="ZcO-MY-EEO" firstAttribute="leading" secondItem="TT7-pd-LPc" secondAttribute="trailing" constant="8" symbolic="YES" id="L1g-P1-E6j"/>
+                            <constraint firstItem="PX4-C7-Xbt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QHY-c2-Hcv"/>
                             <constraint firstItem="Ozg-RR-sHl" firstAttribute="baseline" secondItem="ZcO-MY-EEO" secondAttribute="baseline" id="Sb5-Qg-dJb"/>
                             <constraint firstItem="DkI-ny-Nz5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YmT-Sv-GaC"/>
                             <constraint firstItem="46Q-PL-mog" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dDL-Px-9D7"/>
@@ -98,10 +100,9 @@
                             <constraint firstItem="hQB-JP-6Rq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gzw-YI-DxF"/>
                             <constraint firstItem="46Q-PL-mog" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hTQ-Yu-EPD"/>
                             <constraint firstItem="DkI-ny-Nz5" firstAttribute="top" secondItem="46Q-PL-mog" secondAttribute="bottom" constant="8" symbolic="YES" id="lOp-20-z4n"/>
-                            <constraint firstItem="PX4-C7-Xbt" firstAttribute="top" secondItem="cwY-jL-HZv" secondAttribute="bottom" constant="16" id="mLL-RS-hfw"/>
-                            <constraint firstItem="cwY-jL-HZv" firstAttribute="top" secondItem="ZcO-MY-EEO" secondAttribute="bottom" constant="8" symbolic="YES" id="oTO-zA-cXJ"/>
-                            <constraint firstItem="PX4-C7-Xbt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-70" id="olr-Lx-h2F"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PX4-C7-Xbt" secondAttribute="bottom" constant="8" symbolic="YES" id="rmh-Nx-IyL"/>
                             <constraint firstItem="ZcO-MY-EEO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tca-hr-egb"/>
+                            <constraint firstItem="cwY-jL-HZv" firstAttribute="top" secondItem="ZcO-MY-EEO" secondAttribute="bottom" constant="8" symbolic="YES" id="yyi-Bz-TH9"/>
                         </constraints>
                     </view>
                     <connections>
