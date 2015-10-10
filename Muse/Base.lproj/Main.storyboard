@@ -77,6 +77,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PX4-C7-Xbt">
                                 <rect key="frame" x="275" y="562" width="50" height="30"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="jGO-vn-l8u"/>
+                                </constraints>
                                 <state key="normal" title="Shuffle"/>
                                 <connections>
                                     <action selector="setShuffleMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0H9-2m-VH8"/>

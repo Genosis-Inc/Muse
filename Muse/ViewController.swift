@@ -38,6 +38,7 @@ class ViewController: UIViewController {
         // Shuffle Mode 를 설정합니다.
         player.shuffleMode = .Off
         
+        // Notification을 등록 합니다.
         NSNotificationCenter.defaultCenter().addObserver(self,
             selector: "NowPlayingItemDidChanged:",
             name: MPMusicPlayerControllerNowPlayingItemDidChangeNotification,
@@ -54,8 +55,11 @@ class ViewController: UIViewController {
         player.endGeneratingPlaybackNotifications()
     }
     
+    /// Muse 재생 화면을 출력합니다.
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        displayShuffleMode()
     }
     
     override func didReceiveMemoryWarning() {
