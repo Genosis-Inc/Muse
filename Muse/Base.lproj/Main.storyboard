@@ -17,18 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcO-MY-EEO">
-                                <rect key="frame" x="275" y="162" width="50" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Play">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yuX-A4-2un"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TT7-pd-LPc">
-                                <rect key="frame" x="200" y="162" width="50" height="30"/>
+                                <rect key="frame" x="200" y="162" width="50" height="50"/>
                                 <animations/>
                                 <state key="normal" title="Prev">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -38,7 +28,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozg-RR-sHl">
-                                <rect key="frame" x="350" y="162" width="50" height="30"/>
+                                <rect key="frame" x="350" y="162" width="50" height="50"/>
                                 <animations/>
                                 <state key="normal" title="Next">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -85,6 +75,20 @@
                                     <action selector="setShuffleMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0H9-2m-VH8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcO-MY-EEO">
+                                <rect key="frame" x="268" y="162" width="65" height="50"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="YJ3-nM-bSa"/>
+                                    <constraint firstAttribute="height" constant="40" id="g5z-oz-gcq"/>
+                                </constraints>
+                                <state key="normal" title="Pause">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yuX-A4-2un"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -105,7 +109,7 @@
                             <constraint firstItem="DkI-ny-Nz5" firstAttribute="top" secondItem="46Q-PL-mog" secondAttribute="bottom" constant="8" symbolic="YES" id="lOp-20-z4n"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PX4-C7-Xbt" secondAttribute="bottom" constant="8" symbolic="YES" id="rmh-Nx-IyL"/>
                             <constraint firstItem="ZcO-MY-EEO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tca-hr-egb"/>
-                            <constraint firstItem="cwY-jL-HZv" firstAttribute="top" secondItem="ZcO-MY-EEO" secondAttribute="bottom" constant="8" symbolic="YES" id="yyi-Bz-TH9"/>
+                            <constraint firstItem="cwY-jL-HZv" firstAttribute="top" secondItem="ZcO-MY-EEO" secondAttribute="bottom" constant="25" id="yyi-Bz-TH9"/>
                         </constraints>
                     </view>
                     <connections>
