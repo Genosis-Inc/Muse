@@ -162,7 +162,6 @@
 				TargetAttributes = {
 					60AADA001B981AD200A5DCC7 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 737HDL88T9;
 					};
 					60AADA151B981AD200A5DCC7 = {
 						CreatedOnToolsVersion = 6.4;
