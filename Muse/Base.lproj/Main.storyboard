@@ -113,11 +113,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="artWorkView" destination="46Q-PL-mog" id="Dab-CB-JOK"/>
-                        <outlet property="btnPlayStop" destination="ZcO-MY-EEO" id="OA5-xf-jq0"/>
-                        <outlet property="btnShuffleMode" destination="PX4-C7-Xbt" id="6i4-2X-hTw"/>
-                        <outlet property="lblArtistAlbum" destination="hQB-JP-6Rq" id="WJP-GG-TC9"/>
-                        <outlet property="lblTitle" destination="DkI-ny-Nz5" id="zJx-kq-QMJ"/>
+                        <outlet property="artWorkImageView" destination="46Q-PL-mog" id="Dab-CB-JOK"/>
+                        <outlet property="artistAlbumLabel" destination="hQB-JP-6Rq" id="WJP-GG-TC9"/>
+                        <outlet property="playStopButton" destination="ZcO-MY-EEO" id="OA5-xf-jq0"/>
+                        <outlet property="shuffleModeButton" destination="PX4-C7-Xbt" id="6i4-2X-hTw"/>
+                        <outlet property="titleLabel" destination="DkI-ny-Nz5" id="zJx-kq-QMJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -11,11 +11,11 @@ import MediaPlayer
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var artWorkView: UIImageView!
-    @IBOutlet var lblTitle: UILabel!
-    @IBOutlet var lblArtistAlbum: UILabel!
-    @IBOutlet var btnPlayStop: UIButton!
-    @IBOutlet var btnShuffleMode: UIButton!
+    @IBOutlet weak var artWorkImageView: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var artistAlbumLabel: UILabel!
+    @IBOutlet var playStopButton: UIButton!
+    @IBOutlet var shuffleModeButton: UIButton!
     
     let player = MPMusicPlayerController.applicationMusicPlayer()
     
@@ -126,9 +126,9 @@ class ViewController: UIViewController {
         
         let item = getItem(playingItem)
         
-        artWorkView.image = item.artWork == nil ? nil : item.artWork!.imageWithSize(artWorkView.intrinsicContentSize())
-        lblTitle.text = item.title
-        lblArtistAlbum.text = String("\(item.artist) - \(item.album)")
+        artWorkImageView.image = item.artWork == nil ? nil : item.artWork!.imageWithSize(artWorkImageView.intrinsicContentSize())
+        titleLabel.text = item.title
+        artistAlbumLabel.text = String("\(item.artist) - \(item.album)")
     }
     
     /// `MPMusicPlayerControllerPlaybackStateDidChangeNotification`의 이벤트 핸들러
@@ -137,10 +137,10 @@ class ViewController: UIViewController {
         
         switch (playbackState) {
         case MPMusicPlaybackState.Playing:
-            btnPlayStop.setTitle("Pause", forState: .Normal)
+            playStopButton.setTitle("Pause", forState: .Normal)
         case MPMusicPlaybackState.Stopped,
         MPMusicPlaybackState.Paused:
-            btnPlayStop.setTitle("Play", forState: .Normal)
+            playStopButton.setTitle("Play", forState: .Normal)
         default:
              break
         }
@@ -153,13 +153,13 @@ class ViewController: UIViewController {
         
         switch (shuffleMode) {
         case .Off:
-            btnShuffleMode.setTitle("Off", forState: .Normal)
+            shuffleModeButton.setTitle("Off", forState: .Normal)
         case .Default:
-            btnShuffleMode.setTitle("Default", forState: .Normal)
+            shuffleModeButton.setTitle("Default", forState: .Normal)
         case .Albums:
-            btnShuffleMode.setTitle("Albums", forState: .Normal)
+            shuffleModeButton.setTitle("Albums", forState: .Normal)
         case .Songs:
-            btnShuffleMode.setTitle("Songs", forState: .Normal)
+            shuffleModeButton.setTitle("Songs", forState: .Normal)
         }
     }
 }
